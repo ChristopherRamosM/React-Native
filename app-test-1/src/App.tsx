@@ -1,6 +1,7 @@
 import React from 'react' 
-import { ObjetosLiterales } from './typescript/ObjetosLiterales';
+//import { ObjetosLiterales } from './typescript/ObjetosLiterales';
 //import { TiposBasicos } from './typescript/TiposBasicos';
+import {Contador} from './components/Contador';
 
 const App = () => { 
   return ( 
@@ -8,7 +9,8 @@ const App = () => {
       <h1>Introducción a Type Script with React</h1>
       <hr />
       {/*<TiposBasicos/>*/}
-      <ObjetosLiterales/>
+      {/*<ObjetosLiterales/>*/} 
+      {<Contador/>}
     </div> 
   ) 
 } 
