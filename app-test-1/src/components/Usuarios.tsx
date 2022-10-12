@@ -1,19 +1,13 @@
-import { useEffect, useState } from "react";
-import { reqRespApi } from '../api/reqRes';
-import { ReqRespUsuarioListado, Usuario } from "../interfaces/reqResp";
+//import { useEffect, useState, useRef } from "react";
+//import { reqRespApi } from '../api/reqRes';
+//import { ReqRespUsuarioListado, Usuario } from "../interfaces/reqResp";
+//import { useUsuarios } from './hooks/useUsuarios';
+import { Usuario } from '../interfaces/reqResp';
+import { useUsuarios } from './hooks/useUsuarios';
 
 export const Usuarios = () => {
-    
-    const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
-    useEffect(() => {
-        reqRespApi.get<ReqRespUsuarioListado>('/users')
-        .then(resp=> {
-                //console.log(resp.data.data);
-                setUsuarios(resp.data.data);
-        })
-        .catch(err => console.log(err))
-        }, [])
+    const { usuarios, CRFnPaginaSiguiente, CRFnPaginaAnterior } = useUsuarios();
 
     const renderItem = (usuario: Usuario) => { 
         return ( 
@@ -53,7 +47,10 @@ export const Usuarios = () => {
                         usuarios.map(CRArgUsuario => renderItem(CRArgUsuario))
                     }
                 </tbody>
-            </table> 
+            </table>
+            <button className="btn btn-primary" onClick= { CRFnPaginaAnterior }>Anterior</button>
+            &nbsp;
+            <button className="btn btn-primary" onClick= { CRFnPaginaSiguiente }>Siguiente</button>
         </>
     )
 }

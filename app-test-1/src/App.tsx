@@ -1,10 +1,11 @@
-import React from 'react' 
+//import React from 'react' 
 //import { ObjetosLiterales } from './typescript/ObjetosLiterales';
 //import { TiposBasicos } from './typescript/TiposBasicos';
 //import { Contador } from './components/Contador';
 //import { ContadorHook } from './components/ContadorHook';
 //import { Login } from "./components/Login";
-import { Usuarios } from "./components/Usuarios";
+//import { Usuarios } from "./components/Usuarios";
+import { Formularios } from "./components/Formularios";
 
 const App = () => { 
   return ( 
@@ -16,7 +17,8 @@ const App = () => {
       {/*<Contador/>*/}
       {/*<ContadorHook/>*/}
       {/*<Login/>*/}
-      {<Usuarios/>}
+      {/*<Usuarios/>*/}
+      {<Formularios/>}
     </div> 
   ) 
 }
